@@ -33,9 +33,6 @@
   ).then(e => {
     borderCountries = e.map(e => e.data.name);
   });
-  function redirect(i) {
-    goto(`/country/${i}`);
-  }
 </script>
 
 <style>
@@ -140,8 +137,7 @@
             {#each borderCountries as border, i (border)}
               <li
                 class="bg-white shadow rounded-lg px-4 py-2 cursor-pointer
-                overflow-hidden"
-                on:click={() => redirect(border)}>
+                overflow-hidden">
                 {border}
               </li>
             {/each}
