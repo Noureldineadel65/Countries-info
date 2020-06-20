@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
   import { flip } from "svelte/animate";
+  import { fly } from "svelte/transition";
+
   import Loader from "./Loader.svelte";
   import countriesStore from "../stores/countries-store.js";
 
@@ -63,11 +65,12 @@
   }
 </style>
 
-<div class="card-list my-12">
+<div class="card-list my-12 no-overflow">
   {#each selectedCountries.slice(0, limit) as country (country.name)}
     <div
       animate:flip={{ duration: 500 }}
-      class="bg-white rounded-md shadow card-container">
+      class="bg-white rounded-md shadow card-container no-overflow"
+      transition:fly={{ x: -200 }}>
       <Card {country} />
     </div>
   {:else}

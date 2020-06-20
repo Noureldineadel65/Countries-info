@@ -10,8 +10,7 @@
 
 <script>
   import { onMount } from "svelte";
-  import { goto } from "@sapper/app";
-
+  import { fly } from "svelte/transition";
   export let country;
   const {
     flag,
@@ -27,7 +26,6 @@
     borders
   } = country;
   let borderCountries = [];
-  console.log(borders);
   Promise.all(
     borders.map(e => axios.get(`https://restcountries.eu/rest/v2/alpha/${e}`))
   ).then(e => {
@@ -82,7 +80,7 @@
   }
 </style>
 
-<div class="container">
+<div class="container" transition:fly={{ x: 200 }}>
   <a
     class="back text-2xl bg-white shadow py-2 px-12 inline-flex rounded-lg
     cursor-pointer items-center"
