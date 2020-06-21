@@ -10,7 +10,6 @@
 
 <script>
   import { onMount } from "svelte";
-  import { fly } from "svelte/transition";
   export let country;
   const {
     flag,
@@ -80,7 +79,7 @@
   }
 </style>
 
-<div class="container" transition:fly={{ x: 200 }}>
+<div class="container">
   <a
     class="back text-2xl bg-white shadow py-2 px-12 inline-flex rounded-lg
     cursor-pointer items-center"
