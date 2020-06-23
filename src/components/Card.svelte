@@ -7,9 +7,8 @@
     color: hsl(200, 15%, 8%);
   }
 
-  .image {
+  .card-image {
     max-height: 23rem;
-    /* height: 50%; */
   }
   @media only screen and (max-width: 640px) {
     .image {
@@ -23,7 +22,7 @@
   class="card bg-white rounded-md shadow cursor-pointer"
   href="/country/{country.name}">
   <div class="card-image">
-    <img src={country.flag} alt="" class="object-contain image" />
+    <img src={country.flag} alt="" class="object-fill image" />
   </div>
   <div class="card-description p-8">
     <div class="card-title text-2xl font-bold">{country.name}</div>
